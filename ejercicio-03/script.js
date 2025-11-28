@@ -26,5 +26,5 @@ const estudiantesConPromedio = estudiantes.map((estudiante) => {
   };
 });
 
-// Imprimimos el resultado final en la consola
+// Imprimimos el resultado final en la consola!
 console.log(estudiantesConPromedio);

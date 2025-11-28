@@ -1,4 +1,5 @@
 /* Estilos generales del documento */
+* { box-sizing: border-box; }
 body{
     color:#ffffff;            /* Color de texto principal */
     font-family: tahoma;      /* Fuente global */
@@ -10,19 +11,24 @@ body{
 .pagina{
     display:flex;                                      /* Usa flexbox para organizar el contenido */
     background-image: url('Images/background2.jpg');   /* Imagen de fondo */
-    background-size: 120%;                             /* Aumenta el tamaño de la imagen para que cubra más */
+    background-size: cover;      /* se adapta a cualquier pantalla */
+    background-position: center;                            /* Aumenta el tamaño de la imagen para que cubra más */
     background-position: center;                       /* Centra la imagen */
     background-repeat: no-repeat;                      /* Evita la repetición */
-    height: 100vh;                                     /* Ocupa todo el alto de la pantalla */
+    min-height: 100vh;                                /*  height para móviles (evita recortes por barras) */
+    padding: 1rem;
     flex-direction: row;                               /* Organiza el contenido horizontalmente */
 }
 
 /* Caja principal con efecto vidrio (glassmorphism) */
 .pagina--contenedorPagina{
+    max-width: 1600px;       /* evita desbordes horizontales en pantallas muy anchas */
+    margin: 2% auto;         /* centra el contenedor y conserva tu margen */
+    height: auto;            /* permitir que crezca con el contenido en móviles */
+    max-height: calc(100vh - 2rem); /* evitar que supere la ventana */
+    overflow: hidden;
     margin:2%;                                         /* Separación del borde */
     background-color: rgba(22, 72, 180, 0.105);        /* Fondo translúcido azul */
-    height: 92%;
-    width: 100%;
     border-radius: 20px;                               /* Bordes redondeados */
 
     /* Sombras externas e internas */
@@ -70,6 +76,7 @@ body{
 
 /* Efecto hover de los botones del menú */
 .menuSecciones-secciones:hover{
+    cursor: pointer;
     background-color: rgba(135, 135, 135, 0.084); /* Fondo suave translúcido */
     backdrop-filter: blur(3px);                   /* Efecto de vidrio al pasar el mouse */                /* Levanta ligeramente el botón */
     box-shadow: 0px 4px 15px #00000040;           /* Sombra elegante */
@@ -103,6 +110,8 @@ body{
 
 /* Párrafo de presentación */
 .descripcion--parrafo{
+    font-size: 1.05rem;                                  /* Más legible */
+    line-height: 1.5;
     color: #ffffffab;                             /* Blanco ligeramente translúcido */
     box-sizing: border-box;
     padding: 0 5%;                                /* Separación horizontal */
@@ -132,14 +141,20 @@ body{
 
 /* Contenedor del carrusel de cartas */
 .carrusel {
-    width: 100%; 
-    height: 85%;             
-    overflow: hidden;                          /* Oculta contenido que salga del área */
-    border-radius: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    scroll-padding: 1rem;
+    width: 100%;
+    height: auto; /* Permite crecer en vez de cortar cartas */
+    overflow-x: hidden; /* Scroll horizontal */
+    overflow-y: hidden;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    gap: 1rem;
+    scroll-behavior: smooth; /* scroll elegante */
+    -webkit-overflow-scrolling: touch;
 }
+
 
 /* Estilo de cada carta */
 .carta {
@@ -149,12 +164,13 @@ body{
     text-align:justify;                        /* <-- Debería ser esto */
 
     box-sizing: border-box;
+    gap: 1rem;
     width: 29%;
     margin: 4% 2%;
     height: 80%;
     padding: 20px;
 
-    background: #5d62fc48;                     /* Fondo translúcido lila */
+    background: #0a0c5248;                     /* Fondo translúcido */
     border-radius: 15px;
     flex-shrink: 0;                             /* Evita que la carta se encoja */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);     /* Sombra suave */
@@ -162,7 +178,9 @@ body{
 
 /* Efecto hover de las cartas */
 .carta:hover{
-    transform: scale(1.1);                      /* Agranda la carta */
+    transform: scale(1.05); 
+    transition: transform .18s ease; 
+    cursor: pointer;                   /* Agranda la carta */
 }
 
 /* Título centrado dentro de la carta */
@@ -172,4 +190,80 @@ body{
     align-items: center;
     justify-content: center;
 }
+/* ----------------- RESPONSIVE: TABLET ----------------- */
+@media (max-width: 992px) {
+  /* columnas: presentación más ancha, cartas más estrechas */
+  .menuPrincipal--presentacion { width: 38%; padding: 1rem; }
+  .menuPrincipal--cartas { width: 60%; margin: 0 1%; padding-bottom: 1rem; }
+  .carta { width: 42%; margin: 3% 1%; height: auto; padding: 18px; }
+  .cartas--titulo { height: auto; margin-bottom: .5rem; }
+  .descripcion--parrafo { padding-top: 6%; font-size: 0.98rem; }
+}
+
+/* ----------------- RESPONSIVE: MÓVIL / SMALL TABLET ----------------- */
+@media (max-width: 768px) {
+  /* Layout apilado */
+  .contenedorPagina--menuPrincipal { flex-direction: column; gap: 0.5rem; height: auto; }
+
+  .menuPrincipal--presentacion,
+  .menuPrincipal--cartas {
+    width: 100%;
+    padding: 0.9rem;
+  }
+
+  /* Carrusel se vuelve horizontal scroll (touch-friendly) */
+  .carrusel {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* suaviza el scroll en iOS */
+    gap: 0.8rem;
+    padding: 0.8rem;
+    height: auto;
+  }
+
+  .carta {
+    flex: 0 0 78%;
+    width: 78%;
+    margin: 0 0.5rem;
+    height: auto;
+    padding: 16px;
+    transform: none; /* desactivar transform excesivo en touch */
+  }
+
+  /* Ajustes de texto y botones para ser más grandes al tacto */
+  .menuSecciones-secciones {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+}
+
+/* ----------------- RESPONSIVE: MÓVIL PEQUEÑO ----------------- */
+@media (max-width: 480px) {
+  .carta { flex: 0 0 90%; width: 90%; padding: 14px; font-size: 0.95rem; }
+  .descripcion--parrafo { padding-top: 5%; font-size: 0.95rem; }
+  .presentacion--titulo h2, .presentacion--titulo h3 { font-size: 1.15rem; }
+  .menuSecciones-secciones { padding: 10px 12px; font-size: 0.95rem; }
+}
+/* evitar transformaciones exageradas en pantallas táctiles */
+@media (hover: none) {
+  .carta:hover { transform: none; }
+}
+/* ----- OPTIMIZACIÓN PARA CELULARES EN ORIENTACIÓN VERTICAL ----- */
+@media (max-height: 700px) and (orientation: portrait) {
+  .descripcion--parrafo {
+    font-size: 0.95rem;
+    padding-top: 3%;
+  }
+
+  .presentacion--titulo h2,
+  .presentacion--titulo h3 {
+    font-size: 1.05rem;
+  }
+
+  .menuSecciones-secciones {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
 

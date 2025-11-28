@@ -54,14 +54,25 @@ body{
 }
 
 /* Contenedor del menú de secciones */
-.encabezado--menuSecciones{
-    width: 100%;
-    height: 100%;
+.encabezado--menuSecciones {
     display: flex;
-    justify-content: flex-end;                 /* Ubica los elementos al extremo derecho */
+    flex-wrap: wrap;           /* Permite bajar botones si no caben */
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem;                                 /* Espacio entre opciones del menú */
-    padding-right: 2rem;                       /* Espacio a la derecha */
+    gap: 0.8rem;
+    padding: 0 1rem;
+    width: 100%;
+    border-radius: 12px;
+    transition: max-height 0.3s ease;
+}
+.menu-toggle {
+    display: none;           /* Solo visible en móvil */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 1rem;
 }
 
 /* Estilo de los enlaces del menú */
@@ -264,6 +275,43 @@ body{
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }
+}
+/* Móvil / tablet pequeña */
+@media (max-width: 768px) {
+    /* Oculta links normales al inicio */
+    .encabezado--menuSecciones a {
+        display: none;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Cuando el menú esté abierto (clase .active que agregará JS) */
+    .encabezado--menuSecciones.active a {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        text-align: center;
+    }
+
+    .encabezado--menuSecciones {
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .encabezado--menuSecciones.active {
+        max-height: 500px; /* suficiente para mostrar todos los enlaces */
+    }
+}
+@media (max-width: 480px) {
+    .menuSecciones-secciones {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
 }
 
 

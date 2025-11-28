@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicals</title>
+
+    <!-- Archivo CSS externo donde está el diseño de la página -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="pagina">
+        <div class="pagina--contenedorPagina">
+
+            <!-- HEADER ──────────────────────────────────────────────── -->
+            <!-- Contiene el menú principal de navegación -->
+            <header class="contenedorPagina--encabezado">
+
+                <!-- NAV: Menú semántico para secciones -->
+                <nav class="encabezado--menuSecciones">
+
+                    <!-- Enlaces del menú. Actualmente son botones sin href (pueden controlarse con JS) -->
+                    <a class="menuSecciones-secciones">DESCRIPCION</a>
+                    <a class="menuSecciones-secciones">LOGROS</a>
+                    <a class="menuSecciones-secciones">PROYECTOS</a>
+
+                </nav>
+            </header>
+
+            <!-- MAIN ────────────────────────────────────────────────── -->
+            <!-- Contenido principal de la página -->
+            <main class="contenedorPagina--menuPrincipal">
+
+                <!-- SECCIÓN: PRESENTACIÓN PERSONAL -->
+                <section class="menuPrincipal--presentacion">
+
+                    <!-- Título principal, nombre del usuario -->
+                    <h1 class="presentacion--titulo">Kevin Garcia Jaramillo</h1>
+
+                    <!-- Artículo para la descripción del usuario -->
+                    <article class="presentacion--descripcion">
+                        <p class="descripcion--parrafo">
+                            Soy una persona curiosa y autodidacta, apasionada por la música, los videojuegos 
+                            y el aprendizaje continuo. Disfruto explorar nuevas ideas, mejorar mis 
+                            habilidades de programación y retarme con proyectos que me permitan crecer. 
+                            Me caracterizo por mantener una actitud respetuosa, empática y auténtica, 
+                            lo que me ayuda a crear buenas relaciones y a desenvolverme con tranquilidad 
+                            en diferentes entornos.
+                        </p>
+                    </article>
+
+                </section>
+
+                <!-- SECCIÓN: CARTAS DE INTERESES ────────────────────── -->
+                <section class="menuPrincipal--cartas">
+
+                    <!-- Título de la sección -->
+                    <h2 class="cartas--titulo">Mis Intereses</h2>
+
+                    <!-- Contenedor tipo carrusel (flexbox o scroll horizontal según CSS) -->
+                    <div class="carrusel">
+
+                        <!-- CARTA 1: MÚSICA -->
+                        <article class="carta">
+                            <h3 class="carta--titulo">Música</h3>
+                            <p>
+                                La música siempre ha sido mi espacio seguro, ese lugar donde puedo desconectarme del mundo
+                                y encontrar nuevas sensaciones. Me gusta descubrir géneros distintos, experimentar con sonidos
+                                propios y dejar que cada melodía despierte ideas que no sabía que tenía. Es una inspiración constante,
+                                suave, como una conversación silenciosa que nunca se detiene.
+                            </p>
+                        </article>
+
+                        <!-- CARTA 2: VIDEOJUEGOS -->
+                        <article class="carta">
+                            <h3 class="carta--titulo">Videojuegos</h3>
+                            <p>
+                                En los videojuegos encuentro historias profundas, desafíos únicos y momentos que realmente me desconectan.
+                                Me gusta analizarlos, entender sus mecánicas y ver cómo cada decisión afecta el resultado.
+                                Más allá del entretenimiento, son una forma de conocer mundos nuevos y mejorar mi capacidad de estrategia,
+                                paciencia y observación.
+                            </p>
+                        </article>
+
+                        <!-- CARTA 3: PROGRAMACIÓN -->
+                        <article class="carta">
+                            <h3 class="carta--titulo">Programación</h3>
+                            <p>
+                                La programación se convirtió en una manera de expresar ideas que antes solo existían en mi cabeza.
+                                Me encanta aprender por mi cuenta, explorar conceptos nuevos y construir proyectos que ponen a prueba
+                                mi lógica y creatividad. Cada línea de código es un pequeño reto, y cada solución, una satisfacción que
+                                me impulsa a seguir creciendo.
+                            </p>
+                        </article>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div> 
+</body>
+</html>
+

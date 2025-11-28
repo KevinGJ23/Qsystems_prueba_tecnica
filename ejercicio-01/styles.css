@@ -1,0 +1,175 @@
+/* Estilos generales del documento */
+body{
+    color:#ffffff;            /* Color de texto principal */
+    font-family: tahoma;      /* Fuente global */
+    margin:0;                 /* Quita márgenes del navegador */
+    padding:0;                /* Quita relleno interno */
+}
+
+/* Contenedor principal de la página */
+.pagina{
+    display:flex;                                      /* Usa flexbox para organizar el contenido */
+    background-image: url('Images/background2.jpg');   /* Imagen de fondo */
+    background-size: 120%;                             /* Aumenta el tamaño de la imagen para que cubra más */
+    background-position: center;                       /* Centra la imagen */
+    background-repeat: no-repeat;                      /* Evita la repetición */
+    height: 100vh;                                     /* Ocupa todo el alto de la pantalla */
+    flex-direction: row;                               /* Organiza el contenido horizontalmente */
+}
+
+/* Caja principal con efecto vidrio (glassmorphism) */
+.pagina--contenedorPagina{
+    margin:2%;                                         /* Separación del borde */
+    background-color: rgba(22, 72, 180, 0.105);        /* Fondo translúcido azul */
+    height: 92%;
+    width: 100%;
+    border-radius: 20px;                               /* Bordes redondeados */
+
+    /* Sombras externas e internas */
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35),        /* Sombra exterior */
+        0 4px 10px rgba(0, 0, 0, 0.25) inset,  /* Sombra interior (profundidad) */
+        0 0 0 1px rgba(255, 255, 255, 0.25);   /* Línea suave alrededor */
+
+    backdrop-filter: blur(10px);               /* Efecto de desenfoque vidrio */
+    -webkit-backdrop-filter: blur(10px);       /* Compatibilidad con Safari */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado superior */
+.contenedorPagina--encabezado{
+    width: 98%;
+    height: 5%;
+    margin: 1%;
+    box-sizing: border-box;                    /* Incluye bordes en cálculos de tamaño */
+    display: flex;
+    align-items: center;                       /* Centra verticalmente */
+}
+
+/* Contenedor del menú de secciones */
+.encabezado--menuSecciones{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;                 /* Ubica los elementos al extremo derecho */
+    align-items: center;
+    gap: 1rem;                                 /* Espacio entre opciones del menú */
+    padding-right: 2rem;                       /* Espacio a la derecha */
+}
+
+/* Estilo de los enlaces del menú */
+.menuSecciones-secciones{
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;                     /* Quita subrayado */
+    padding: 0.6rem 1rem;                      /* Botones más cómodos de clicar */
+    border-radius: 10px;
+}
+
+/* Efecto hover de los botones del menú */
+.menuSecciones-secciones:hover{
+    background-color: rgba(135, 135, 135, 0.084); /* Fondo suave translúcido */
+    backdrop-filter: blur(3px);                   /* Efecto de vidrio al pasar el mouse */                /* Levanta ligeramente el botón */
+    box-shadow: 0px 4px 15px #00000040;           /* Sombra elegante */
+}
+.menuSecciones-secciones:active{
+    transform: scale(0.97);
+}
+/* Contenedor principal dividido en presentación y cartas */
+.contenedorPagina--menuPrincipal{
+    display:flex;
+    flex-direction: row;                          /* Sección izquierda y derecha */
+    height: 100%;
+    width: 100%;
+}
+
+/* Columna izquierda (presentación personal) */
+.menuPrincipal--presentacion{
+    width: 30%;
+    height: 100%;
+}
+
+/* Título en la sección de presentación */
+.presentacion--titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4%;
+    width: 92%;
+    height: 10%;
+}
+
+/* Párrafo de presentación */
+.descripcion--parrafo{
+    color: #ffffffab;                             /* Blanco ligeramente translúcido */
+    box-sizing: border-box;
+    padding: 0 5%;                                /* Separación horizontal */
+    padding-top:10% ;                             /* Espacio superior */
+    text-align: center;                           /* Centrado del texto */
+}
+
+/* Columna derecha (zona de cartas) */
+.menuPrincipal--cartas{
+    width: 66%;
+    margin: 0 2%;
+    margin-bottom: 2%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título encima del carrusel */
+.cartas--titulo{
+    margin: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del carrusel de cartas */
+.carrusel {
+    width: 100%; 
+    height: 85%;             
+    overflow: hidden;                          /* Oculta contenido que salga del área */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Estilo de cada carta */
+.carta {
+    font-size: 14px;
+    
+    /* ⚠️ Esta línea tiene un error: "text-align:justify-content" NO existe */
+    text-align:justify;                        /* <-- Debería ser esto */
+
+    box-sizing: border-box;
+    width: 29%;
+    margin: 4% 2%;
+    height: 80%;
+    padding: 20px;
+
+    background: #5d62fc48;                     /* Fondo translúcido lila */
+    border-radius: 15px;
+    flex-shrink: 0;                             /* Evita que la carta se encoja */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);     /* Sombra suave */
+}
+
+/* Efecto hover de las cartas */
+.carta:hover{
+    transform: scale(1.1);                      /* Agranda la carta */
+}
+
+/* Título centrado dentro de la carta */
+.carta--titulo{
+    font-weight: 600;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+

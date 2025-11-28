@@ -60,68 +60,68 @@ const usuariosFiltrados = computed(() => {
 </template>
 
 <style scoped>
-/* --- SECCIÓN DE ESTILOS (CSS) --- */
+  /* --- SECCIÓN DE ESTILOS (CSS) --- */
 
-.user-list-container {
-    /* El ancho máximo de la tarjeta y centrado automático */
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: #f9f9f9;
-    /* Importante para que el padding no desborde la tarjeta */
-    box-sizing: border-box; 
-}
+  .user-list-container {
+      /* El ancho máximo de la tarjeta y centrado automático */
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #f9f9f9;
+      /* Importante para que el padding no desborde la tarjeta */
+      box-sizing: border-box; 
+  }
 
-.filter-input {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    font-size: 16px;
-    /* De nuevo, importante para que el 95% + padding no rompa la vista */
-    box-sizing: border-box; 
-}
+  .filter-input {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 16px;
+      /* De nuevo, importante para que el 95% + padding no rompa la vista */
+      box-sizing: border-box; 
+  }
 
-.user-list {
-    /* Limitamos la altura para que solo muestre 300px y luego aparezca el scroll */
-    max-height: 300px; 
-    /* Si el contenido es más alto que 300px, activa el scroll vertical */
-    overflow-y: auto; 
-    /* Pequeño espacio a la derecha para que el scroll se vea mejor */
-    padding-right: 5px; 
-}
-.user-item {
-    /* Usamos flex para que el nombre y el correo se alineen en la misma fila (izquierda y derecha) */
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    background-color: #fff;
-    /* La barrita verde a la izquierda, como decoración de Vue */
-    border-left: 5px solid #42b883; 
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
+  .user-list {
+      /* Limitamos la altura para que solo muestre 300px y luego aparezca el scroll */
+      max-height: 300px; 
+      /* Si el contenido es más alto que 300px, activa el scroll vertical */
+      overflow-y: auto; 
+      /* Pequeño espacio a la derecha para que el scroll se vea mejor */
+      padding-right: 5px; 
+  }
+  .user-item {
+      /* Usamos flex para que el nombre y el correo se alineen en la misma fila (izquierda y derecha) */
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      background-color: #fff;
+      /* La barrita verde a la izquierda, como decoración de Vue */
+      border-left: 5px solid #42b883; 
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
 
-.user-name {
-    font-weight: bold;
-}
+  .user-name {
+      font-weight: bold;
+  }
 
-.user-email {
-    color: #555;
-    font-size: 0.9em;
-}
+  .user-email {
+      color: #555;
+      font-size: 0.9em;
+  }
 
-.no-results {
-    /* Estilo para el mensaje de "no encontrado" */
-    text-align: center;
-    color: #e74c3c;
-    padding: 15px;
-    border: 1px dashed #e74c3c;
-    border-radius: 4px;
-}
+  .no-results {
+      /* Estilo para el mensaje de "no encontrado" */
+      text-align: center;
+      color: #e74c3c;
+      padding: 15px;
+      border: 1px dashed #e74c3c;
+      border-radius: 4px;
+  }
 </style>

@@ -30,15 +30,21 @@ const dataUsuarios = ref([
 </template>
 
 <style>
-/* Estilos globales (afectan a toda la página) */
-#app {
-    /* Tipo de letra: Avenir, si no, Helvetica, y si no, cualquiera sin serifa */
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    /* Centramos el texto. */
-    text-align: center;
-    /* Color de texto principal, un gris oscuro */
-    color: #2c3e50;
-    /* Quitamos el margen superior que venía por defecto, para empezar arriba del todo. */
-    margin-top: 0;
-}
+  body{
+    background-color: #160c51;
+  }
+  /* Estilos globales (afectan a toda la página) */
+  #app {
+      /* Tipo de letra: Avenir, si no, Helvetica, y si no, cualquiera sin serifa */
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      /* Centramos el texto. */
+      text-align: center;
+      /* Color de texto principal, un gris oscuro */
+      color: #2c3e50;
+      /* Quitamos el margen superior que venía por defecto, para empezar arriba del todo. */
+      margin-top: 0;
+  }
+  h1{
+    color: #ffffff;
+  }
 </style>

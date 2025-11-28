@@ -44,12 +44,14 @@ function filtrarProductos(filtros) {
 // PRUEBAS RÁPIDAS
 // ----------------------------------------------------
 
+// ...
 console.log("--- Prueba 1: Rango de 1000 a 3000 ---");
 const resultado1 = filtrarProductos({ 
     minPrecio: 1000, 
     maxPrecio: 3000 
 });
-console.log(resultado1);
+// Usamos JSON.stringify para imprimir la estructura completa como texto
+console.log(JSON.stringify(resultado1, null, 2));
 
 console.log("\n--- Prueba 2: Comida entre 2000 y 6000 ---");
 const resultado2 = filtrarProductos({ 
@@ -57,4 +59,5 @@ const resultado2 = filtrarProductos({
     maxPrecio: 6000, 
     categoria: "comida" 
 });
-console.log(resultado2);
+// Usamos JSON.stringify para imprimir la estructura completa como texto
+console.log(JSON.stringify(resultado2, null, 2));

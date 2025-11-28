@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #160c51; /* Fondo oscuro */
+    color: #333;
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* --- Estructura Principal --- */
+
+.contenedor-principal {
+    display: flex;
+    gap: 20px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.columna--agregar {
+    width: 30%;
+    align-items: center;
+}
+
+.columna--lista {
+    width: 70%;
+}
+
+/* --- Contenedores/Tarjetas --- */
+.formulario-tareas,
+.filtro-tareas,
+.lista-tareas {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    /* Estilo de tarjeta para la lista de tareas */
+    border: 1px solid #e0e0e0; 
+    padding: 0; /* Quitamos padding interno para que el encabezado toque el borde */
+}
+
+/* Ajuste de padding para los formularios */
+.formulario-tareas {
+    padding: 15px;
+}
+.filtro-tareas {
+    padding: 15px;
+}
+
+/* --- Formularios y Botones --- */
+.formulario-tareas__input,
+.formulario-tareas__textarea,
+.formulario-tareas__select,
+.filtro-tareas__select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+.formulario-tareas__titulo{
+    display:flex;
+    justify-content: center;
+}
+.filtro-tareas__titulo{
+    display:flex;
+    justify-content: center;
+}
+
+.formulario-tareas__boton {
+    padding: 10px 15px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* El botón ocupa todo el ancho */
+}
+
+.formulario-tareas__boton:hover {
+    background: #218838;
+}
+
+/* --- Encabezado de la Tabla Simulado --- */
+.encabezado-tabla-simulado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e0; /* Fondo gris de la cabecera */
+    padding: 8px 15px;
+    border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.encabezado-celda {
+    flex: 1; /* Distribución inicial uniforme */
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Anchos fijos para replicar la imagen */
+.encabezado-tabla-simulado .encabezado-celda:nth-child(1) { /* ID */
+    flex: 0 0 50px; 
+}
+.encabezado-tabla-simulado .encabezado-celda:nth-child(2) { /* Título */
+    flex: 0 0 100px; 
+}
+.encabezado-tabla-simulado .encabezado-celda:nth-child(5) { /* Espacio para el botón */
+    flex: 0 0 60px; 
+    text-align: right;
+}
+
+/* --- Contenedor y Filas de Tareas --- */
+.lista-tareas__contenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 15px 15px; /* Padding solo a los lados y abajo */
+}
+
+/* Estilo para la FILA de tarea (reemplaza tarea-item) */
+.tarea-item {
+    padding: 0; /* Eliminamos el padding interno de la caja de tarea */
+    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+    display: block; /* Hacemos que .tarea-item ya no sea flex */
+}
+
+.tarea-item:last-child {
+    border-bottom: none;
+}
+
+.tarea-fila {
+    display: flex; /* La fila interna sí es flex */
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+.lista-tareas__titulo{
+    display:flex;
+    justify-content: center;
+}
+.tarea-celda {
+    flex: 1; 
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+/* Anchos fijos para las celdas de tarea */
+.tarea-celda--id {
+    flex: 0 0 50px; 
+}
+.tarea-celda--titulo {
+    flex: 0 0 100px;
+}
+.tarea-celda--acciones {
+    flex: 0 0 60px;
+    text-align: right;
+}
+
+/* --- Botón de Eliminar (Círculo Rojo) --- */
+.tarea-item__boton--eliminar {
+    /* El botón ahora sí tiene fondo y padding */
+    background: #e74c3c; /* Rojo brillante */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    /* Aseguramos que se muestre el texto "Eliminar" */
+    line-height: normal; 
+    height: auto;
+    width: auto;
+}
+
+.tarea-item__boton--eliminar:hover {
+    background: #c0392b;
+}
+
+.tarea-item__rojo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #dc3545; /* Rojo */
+    border-radius: 50%; /* Círculo */
+    vertical-align: middle;
+}
+/* --- Select de Estado Compacto y con Color --- */
+.tarea-item__select {
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    width: 100px; /* Hacemos que sea pequeño */
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none; /* Ocultar flecha nativa en Chrome/Safari */
+    -moz-appearance: none;    /* Ocultar flecha nativa en Firefox */
+    appearance: none;         /* Ocultar flecha nativa */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M10%203L6%207%202%203z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 6px top 50%;
+}
+
+/* Estilos de color aplicados al SELECT según el estado seleccionado (clase dinámica) */
+
+/* Estado Pendiente (Rojo/Naranja) */
+.estado-Pendiente {
+    background-color: #f39c12; /* Naranja/Amarillo */
+    color: #fff;
+    border-color: #e67e22;
+}
+
+/* Estado En progreso (Amarillo) */
+.estado-En\ progreso {
+    background-color: #f1c40f; /* Amarillo */
+    color: #333; /* Texto oscuro */
+    border-color: #f39c12;
+}
+
+/* Estado Completada (Verde) */
+.estado-Completada {
+    background-color: #27ae60; /* Verde */
+    color: #fff;
+    border-color: #2ecc71;
+}

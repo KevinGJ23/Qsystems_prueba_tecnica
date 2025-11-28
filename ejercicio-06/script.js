@@ -1,9 +1,9 @@
 // Módulos necesarios para Node.js
 const fs = require('fs');
 
-const API_URL = './productos.json';
+const API_URL = 'ejercicio-06/productos.json';
 // Capturamos el ID de la terminal (process.argv[2])
-const ID_BUSCADO = parseInt(process.argv[2]); 
+const ID_BUSCADO = 2; 
 
 // Datos JSON de la mini API
 const MOCK_DATA = [

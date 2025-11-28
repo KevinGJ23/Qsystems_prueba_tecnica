@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 class="titulo-principal">Gestión de Tareas</h1>
+
+    <div class="contenedor-principal">
+        
+        <div class="columna columna--agregar">
+            
+            <div class="formulario-tareas">
+                <h2 class="formulario-tareas__titulo">Agregar Nueva Tarea</h2>
+                
+                <input type="text" class="formulario-tareas__input" id="titulo-tarea" placeholder="Título">
+                
+                <textarea class="formulario-tareas__textarea" id="descripcion-tarea" placeholder="Descripción"></textarea>
+                
+                <select class="formulario-tareas__select" id="estado-tarea">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En progreso">En progreso</option>
+                    <option value="Completada">Completada</option>
+                </select>
+                
+                <button class="formulario-tareas__boton" id="boton-agregar">Agregar Tarea</button>
+            </div>
+        </div>
+
+        <div class="columna columna--lista">
+            
+            <div class="filtro-tareas">
+                <h2 class="filtro-tareas__titulo">Filtrar Tareas</h2>
+                
+                <select class="filtro-tareas__select" id="filtro-estado">
+                    <option value="Todas">Todas</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En progreso">En progreso</option>
+                    <option value="Completada">Completada</option>
+                </select>
+            </div>
+
+            <div class="lista-tareas">
+                <h2 class="lista-tareas__titulo">Lista de Tareas</h2>
+                
+                <div class="encabezado-tabla-simulado">
+                    <div class="encabezado-celda">ID</div>
+                    <div class="encabezado-celda">titulo</div>
+                    <div class="encabezado-celda">descripcion</div>
+                    <div class="encabezado-celda">estado</div>
+                    <div class="encabezado-celda"></div> </div>
+                
+                <div class="lista-tareas__contenedor" id="contenedor-tareas"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+

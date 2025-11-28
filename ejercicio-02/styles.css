@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 
-.container {
+.contenedor {
     width: 400px;
     margin: 80px auto;
     background: #2a2a40;
@@ -20,13 +20,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-.task-input {
+.contenedor--ingresoTarea {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-#taskText {
+.ingresoTarea--entrada {
     flex: 1;
     padding: 10px;
     border-radius: 8px;
@@ -34,7 +34,7 @@ h1 {
     outline: none;
 }
 
-#addTaskBtn {
+.ingresoTarea--agregar {
     padding: 10px 15px;
     border: none;
     background: #4f8cff;
@@ -42,12 +42,11 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
 }
-
-#addTaskBtn:hover {
+.ingresoTarea--agregar:hover {
     background: #3a6fd1;
 }
 
-.task-list {
+.contenedor--listatareas {
     padding: 0;
     list-style: none;
     margin: 0;
